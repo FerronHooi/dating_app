@@ -3,6 +3,8 @@ import random
 from collections import Counter
 
 # TODO: Also add column which user added which activity --> in order to also be able to select based on who
+
+# TODO: User should be able to enter a max tijdsduur
 Tijdsduur = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24)
 
 #Loading CSV in Pandas DataFrame

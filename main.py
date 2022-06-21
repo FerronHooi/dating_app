@@ -1,13 +1,11 @@
 import pandas as pd
 import random
+from collections import Counter
 
 Tijdsduur = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24)
 
-# TODO: Show count of each individual activityS/D/N
 #Loading CSV in Pandas DataFrame
 my_csv = pd.read_csv('Dates 10f26e397f9c4b6da70d310139e5cd02.csv')
-
-# TODO: Get only distinct value from lists beneath
 
 #function below removes nan from list and shows only unique values in the list and orders it in alphabetical order
 def activityProperty(csv_column):
@@ -15,13 +13,24 @@ def activityProperty(csv_column):
     activityProperty = sorted(list(set([item for item in activityProperty if not (pd.isnull(item)) == True])))
     print(activityProperty)
 
+#fumction below shows the count of each occurence
+def activityPropertyCount(csv_column):
+    activityProperty = csv_column.tolist()
+    activityCount = Counter(sorted(list([item for item in activityProperty if not (pd.isnull(item)) == True])))
+    print(activityCount)
+
+
 activityLocation = activityProperty(my_csv.Locatie)
+activityLocationCount = activityPropertyCount(my_csv.Locatie)
+
 activityNames = activityProperty(my_csv.Name)
+activityNamesCount = activityPropertyCount(my_csv.Name)
+
 activityStatus = activityProperty(my_csv.Status)
+activityStatusCount = activityPropertyCount(my_csv.Status)
+
 activityDurage = activityProperty(my_csv.Duur)
-
-
-
+activityDurageCount = activityPropertyCount(my_csv.Duur)
 
 # TODO: Fix inquirer
 #use inquirer to let user select from list

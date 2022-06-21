@@ -9,10 +9,10 @@ my_csv = pd.read_csv('Dates 10f26e397f9c4b6da70d310139e5cd02.csv')
 
 # TODO: Get only distinct value from lists beneath
 
-#function below removes nan from list and shows only unique values in the list
+#function below removes nan from list and shows only unique values in the list and orders it in alphabetical order
 def activityProperty(csv_column):
     activityProperty = csv_column.tolist()
-    activityProperty = list(set([item for item in activityProperty if not (pd.isnull(item)) == True]))
+    activityProperty = sorted(list(set([item for item in activityProperty if not (pd.isnull(item)) == True])))
     print(activityProperty)
 
 activityLocation = activityProperty(my_csv.Locatie)

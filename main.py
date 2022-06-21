@@ -34,10 +34,7 @@ activityStatusCount = activityPropertyCount(my_csv.Status)
 activityDurage = activityProperty(my_csv.Duur)
 activityDurageCount = activityPropertyCount(my_csv.Duur)
 
-# TODO: If user executes this scripts then
-    # 1. He should pick a status (or not)
-    # 2. He should then pick a max duration (or not)
-    # 3. He should be asked to pick a location (or not)
+# TODO: If user picks a number only options should be shown that can be picked based on previous chosen option
 
 def let_user_pick(options):
     print("Please choose:")
@@ -58,7 +55,6 @@ def selection(activityPropertyList):
     selection = activityPropertyList[nr]
     print("You chose: " + selection)
     return selection
-
 
 chosenStatus = selection(activityStatus)
 chosenDurage = selection(activityDurage)

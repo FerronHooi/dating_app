@@ -65,7 +65,3 @@ chosenLocation = selection(activityLocation)
 print(chosenStatus)
 print(chosenDurage)
 print(chosenLocation)
-
-print("You have chosen", chosenStatus, "which will take", chosenDurage, "hours and take place in", chosenLocation)
-#Selects random item from list
-#print(random.choice(list(activityNames)))

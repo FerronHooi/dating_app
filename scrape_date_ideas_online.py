@@ -24,9 +24,16 @@ def date_ideas(links, classname, column1, column2):
 #enter list of links at [0] and classname at [1]
 date_ideas(linksCoupleInTheKitchen, 'sp-col-4 index-item', 'div', 'h2')
 
-#write list to csv file
-df = pd.DataFrame(date_ideas_list)
+#write list to csv file column1 = Activity
+df = pd.DataFrame(date_ideas_list , columns = ['Activity'])
 df.to_csv('date_ideas.csv', index=False)
 
+dfNotion = pd.read_csv('Dates 10f26e397f9c4b6da70d310139e5cd02.csv')
+#append dfNotion ideas to csv and write to file
+for index, row in dfNotion.iterrows():
+    if row['Name'] not in date_ideas_list:
+        date_ideas_list.append(row['Name'])
+dfNotion = pd.DataFrame(date_ideas_list , columns = ['Activity'])
+dfNotion.to_csv('date_ideas_notion.csv', index=False)
 
 print(date_ideas_list)

@@ -34,6 +34,6 @@ for index, row in dfNotion.iterrows():
     if row['Name'] not in date_ideas_list:
         date_ideas_list.append(row['Name'])
 dfNotion = pd.DataFrame(date_ideas_list , columns = ['Activity'])
-dfNotion.to_csv('date_ideas_notion.csv', index=False)
+dfNotion.to_csv('date_ideas.csv', index=False)
 
 print(date_ideas_list)

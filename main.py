@@ -38,6 +38,7 @@ activityDurageCount = activityPropertyCount(my_csv.Duur)
 
 # TODO: If user picks a number only options should be shown that can be picked based on previous chosen option
 
+
 def let_user_pick(options):
     print("Please choose:")
 

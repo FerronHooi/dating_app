@@ -37,9 +37,8 @@ df = pd.DataFrame(date_ideas_list , columns = ['Activity'])
 requests.get('https://smartcouples.ifas.ufl.edu/dating/having-fun-and-staying-close/101-fun-dating-ideas/')
 page = requests.get('https://smartcouples.ifas.ufl.edu/dating/having-fun-and-staying-close/101-fun-dating-ideas/')
 soup = BeautifulSoup(page.content, 'html.parser')
-# print(soup.prettify())
-date_ideas = soup.find_all('li')
-# print(date_ideas)
+date_ideas = soup.find_all('ol')
+
 for date_idea in date_ideas:
     #only append unique values to the list
     print(date_idea.get_text().strip())
@@ -51,4 +50,4 @@ df = pd.DataFrame(date_ideas_list , columns = ['Activity'])
 #write all df to csv
 df.to_csv('date_ideas.csv', index=False)
 
-print(date_ideas_list)
+# print(date_ideas_list)

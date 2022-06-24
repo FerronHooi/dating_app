@@ -48,6 +48,8 @@ for date_idea in date_ideas:
 df = pd.DataFrame(date_ideas_list , columns = ['Activity'])
 
 #write all df to csv
+df['ActivityID'] = df.index + 1
 df.to_csv('date_ideas.csv', index=False)
 
 # print(date_ideas_list)
+
